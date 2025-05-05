@@ -1,0 +1,9 @@
+com\senac\hustincollabe\controller\ClienteController.class
+com\senac\hustincollabe\model\Contato.class
+com\senac\hustincollabe\controller\ImovelController.class
+com\senac\hustincollabe\controller\FinanciamentoController.class
+com\senac\hustincollabe\model\Cliente.class
+com\senac\hustincollabe\controller\ContatoController.class
+com\senac\hustincollabe\HustincollabeApplication.class
+com\senac\hustincollabe\model\SimulacaoFinanciamento.class
+com\senac\hustincollabe\model\Imovel.class
