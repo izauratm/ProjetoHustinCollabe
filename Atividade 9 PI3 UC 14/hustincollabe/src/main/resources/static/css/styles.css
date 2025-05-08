@@ -1,0 +1,172 @@
+.navegacao {
+    background-image: url('imagens/edificio.jpg');
+    background-repeat: no-repeat;/*repetição da imagem*/
+    background-position: right;/*centraliza imagem no cabeçalho*/
+    padding: 5px;/*adiciona espaçamento interno*/
+    align-items: center;/*alinha os itens verticalmente */
+    justify-content: space-between;/*espaça os links uniformemente */
+    
+    width: 100%;
+}
+
+.navegacao a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.navegacao img {
+    height: 150px;/*altura do logo */
+}
+
+.bg-Gray {/*cor cabeçalho*/
+    background-color: rgb(192, 183, 183);
+}
+
+h2 {
+    text-align: center;
+    color: rgb(75, 75, 233);
+    font-size: 25px;
+}
+
+p {
+    color: black;
+    font-size: 100%;
+    text-align: center;
+    font-size: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.btn-group {
+    margin-bottom: 15px;/*ajuste para dropdown*/
+}
+
+.dropdown-menu {
+    width: 50%;
+    text-align: center;
+}
+
+/*ajustes no formulário */
+.form-control {
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/*margem entre os elementos x melhor organização*/
+.row > div {
+    margin-bottom: 20px;
+}
+
+.card-body {/*cartões home*/
+    text-align: center;
+    font-size: 15px;
+}
+
+.fale-conosco .card { /*cartões contato*/
+    max-width: 300px; /* Define uma largura máxima para os cards */
+    margin: 0 auto; /* Centraliza os cards */
+    padding: 10px; /* Reduz o preenchimento interno */
+}
+
+form {
+    border: 1px solid #ccc;/*definação borda sutil*/
+    border-radius: 4px;/*arredonda os cantos*/
+    outline: none;/*remove contorno ao focar*/
+    border-width: 0;
+}
+
+input,
+form {
+    border-color: #66afe9;/*muda cor borda ao focar */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);/*adição efeito sombra sutil */
+    font-size: 15px;
+}
+
+p {
+    padding: 0 0px;/*espaçamento ao redor texto */
+}
+
+.feature-card {
+    border: 1px solid #4d3f3f;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px;
+}
+.logo-container {
+    text-align: center; /* imagem icon fale conosco */
+}
+/*rodapé*/
+footer p {
+    margin: 1px 0;
+    font-size: 13px;
+    color: black;
+}
+ 
+footer a {
+    color: black;
+    text-decoration: none;
+    margin: 0 2px;
+    font-size: 10px;
+   
+}
+ 
+.redes-sociais {
+    margin-top: 1px;/*espaçamento entre informações de contato e ícones*/
+}
+
+.redes-sociais a {
+    margin: 0 5px; /*espaço entre os ícones */
+    background-color: transparent;
+}
+
+.redes-sociais img {
+    width: 25px;/*tamanho ícones */
+    height: 25px;/*tamanho ícones */
+}

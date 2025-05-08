@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" th:href="@{/imagens/logoicon.png}" type="image/x-icon">
+        <title>HustinCollabe Imóveis</title>
+        <!-- Ajustados os caminhos dos arquivos de CSS -->
+        <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" th:href="@{/css/styles.css}">
+    </head>
+
+    <header>
+        <div class="d-flex justify-content-between align-items-center p-3 bg-secondary">
+            <div class="navegacao">
+                <img th:src="@{/imagens/logo3.png}" alt="Logotipo da HustinCollabe">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" th:href="@{/}">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" th:href="@{/imoveis}">Encontre Seu Imóvel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" th:href="@{/faleconosco}">Fale Conosco</a>
+                                </li>
+                            </ul>
+                            <span class="navbar-text">*HustinCollabe - Sua Imobiliária Virtual*</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <body>
+        <h2>Imóveis em Porto Alegre, para você morar ou investir!</h2>
+        <p>Somos pioneiros na plataforma digital para soluções imobiliárias, contamos com uma equipe especializada em realizar seu sonho.<br>Nosso objetivo é redefinir o mercado imobiliário, conectando pessoas aos seus sonhos com tecnologia inovadora e um atendimento verdadeiramente personalizado.<br>Simplificamos o processo e elevamos a experiência de compra e venda a um novo patamar, garantindo agilidade, segurança e transparência.<br>Somos parceiros de líderes na área de construção, entregando soluções sofisticadas e alinhadas aos mais elevados padrões de qualidade, superando as expectativas de quem busca excelência.</p>
+
+        <section class="container my-5">
+            <div class="card bg-secondary text-white">
+                <div class="card-body">* Encontre seu imóvel aqui abaixo ou nos contate! *</div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <form th:action="@{/home/enviarDados}" method="POST">
+                        <div class="mb-3">
+                            <label for="imovel" class="form-label">Tipo de Imóvel:</label>
+                            <select id="tipo_interesse" name="tipo_interesse" class="form-select" required>
+                                <option value="" disabled selected>Escolha uma opção</option>
+                                <option value="morar">Para Morar</option>
+                                <option value="investir">Para Investir</option>
+                                <option value="trabalhar">Para Trabalhar</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome_cliente" name="nome_cliente" placeholder="Seu nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="endereco" class="form-label">Endereço</label>
+                            <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Seu endereço" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="datanasc" class="form-label">Data do Nascimento</label>
+                            <input type="date" class="form-control" id="data_nasc" name="data_nasc" placeholder="data de nascimento" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="number" class="form-control" id="telefone" name="telefone" placeholder="Seu telefone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rg" class="form-label">RG</label>
+                            <input type="number" class="form-control" id="rg" name="rg" placeholder="Seu RG" required>                        
+                        </div>
+                        <div class="mb-3">
+                            <label for="rg" class="form-label">CPF</label>
+                            <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Seu CPF" required>                        
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-primary">ENVIAR DADOS</button>
+                            <button type="reset" class="btn btn-success">LIMPAR</button>
+                            <div class="alert alert-success" th:if="${mensagem}">
+                           <span th:text="${mensagem}"></span>
+                            </div>
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <p>
+            <a href="https://web.whatsapp.com/" target="_blank" class="btn btn-secondary text-white">Contate Um Consultor de Vendas</a>
+        </p>
+
+        <div class="container bg-light py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card feature-card text-center">
+                        <div class="card-body">
+                            <i class="bi bi-house-fill text-primary h4"></i>
+                            <h3 class="h5 text-dark mt-3">Residencial</h3>
+                            <p class="text-muted">Encontre o lar perfeito para você e sua família</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card text-center">
+                        <div class="card-body">
+                            <i class="bi bi-currency-dollar text-primary h4"></i>
+                            <h3 class="h5 text-dark mt-3">Investimento</h3>
+                            <p class="text-muted">Oportunidades únicas para investir no mercado imobiliário</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card text-center">
+                        <div class="card-body">
+                            <i class="bi bi-geo-alt-fill text-primary h4"></i>
+                            <h3 class="h5 text-dark mt-3">Localização</h3>
+                            <p class="text-muted">Imóveis nas melhores localizações de Porto Alegre</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <p>A HustinCollabe Imóveis tem a solução para cada necessidade, porque o que é importante para você, é prioridade para nós!</p>
+        </div>
+
+        <footer class="bg-secondary text-white text-center py-3">
+            <div class="redes-sociais">
+                <a href="https://www.instagram.com" target="_blank">
+                    <img th:src="@{/imagens/instagram.png}" alt="Instagram" /></a>
+                <a href="https://www.linkedin.com/" target="_blank">
+                    <img th:src="@{/imagens/linkedin.png}" alt="Linkedin" /></a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img th:src="@{/imagens/facebook.png}" alt="Facebook" /></a>
+                <p><br>&copy; 2025. HustinCollabe Imóveis Ltda. Desenvolvido por Izaura TM. Todos os direitos reservados.</p>
+                <p><a href="#politica-de-privacidade">Política de Privacidade</a> | <a href="#termos-de-servico">Termos de Serviço</a> | <a href="#contato">Contato</a></p>
+            </div>
+        </footer>
+
+        <script th:src="@{/js/script.js}"></script>
+    </body>
+</html>
